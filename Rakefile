@@ -5,9 +5,9 @@ begin
   require 'jeweler'
   Jeweler::Tasks.new do |gem|
     gem.name = "ebcdic_converter"
-    gem.summary = %Q{TODO: one-line summary of your gem}
-    gem.description = %Q{TODO: longer description of your gem}
-    gem.email = "bernardo.telles@dms.myflorida.com"
+    gem.summary = %Q{Adds a method to String that converts it from ebcdic to integer}
+    gem.description = %Q{Adds a method to String that converts it from ebcdic to integer}
+    gem.email = "btelles@gmail.com"
     gem.homepage = "http://github.com/btelles/ebcdic_converter"
     gem.authors = ["Bernie Telles"]
     gem.add_development_dependency "rspec", ">= 1.2.9"
