@@ -5,8 +5,8 @@ begin
   require 'jeweler'
   Jeweler::Tasks.new do |gem|
     gem.name = "ebcdic_converter"
-    gem.summary = %Q{Adds a method to String that converts it from ebcdic to integer}
-    gem.description = %Q{Adds a method to String that converts it from ebcdic to integer}
+    gem.summary = %Q{Adds a method (ebcdic_to_i) to String that converts it from ebcdic to integer}
+    gem.description = %Q{Adds a method (ebcdic_to_i) to String that converts it from ebcdic to integer}
     gem.email = "btelles@gmail.com"
     gem.homepage = "http://github.com/btelles/ebcdic_converter"
     gem.authors = ["Bernie Telles"]

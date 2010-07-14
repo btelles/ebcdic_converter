@@ -1,3 +1,10 @@
+#
+# This module adds one method to String that will
+# convert the string to a signed ebcdic integer
+# ebcdic is just the use of the last digit in a string
+# as a signed character.
+#
+#
 module EbcdicConverter
   EBCDICPOS = {
              'A'  =>  '1',
