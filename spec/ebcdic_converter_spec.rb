@@ -12,5 +12,9 @@ describe "EbcdicConverter" do
     it "converts last digit to negative if ebcdic says it is" do
       "12K".ebcdic_to_i.should == -122
     end
+    it "converts last digit to 0 if it's a } OR {" do
+      "00012}".ebcdic_to_i.should == 120
+      "00012{".ebcdic_to_i.should == -120
+    end
   end
 end

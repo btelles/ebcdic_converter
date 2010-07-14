@@ -27,7 +27,8 @@ module EbcdicConverter
              'O'  => '6',
              'P'  => '7',
              'Q'  => '8',
-             'R'  => '9'
+             'R'  => '9',
+             '}'  =>  '0'
   }
   EBCDIC = EBCDICPOS.merge(EBCDICNEG)
 end
