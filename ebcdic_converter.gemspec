@@ -5,12 +5,12 @@
 
 Gem::Specification.new do |s|
   s.name = %q{ebcdic_converter}
-  s.version = "1.0.0"
+  s.version = "1.1.0"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Bernie Telles"]
   s.date = %q{2010-07-14}
-  s.description = %q{Adds a method to String that converts it from ebcdic to integer}
+  s.description = %q{Adds a method (ebcdic_to_i) to String that converts it from ebcdic to integer}
   s.email = %q{btelles@gmail.com}
   s.extra_rdoc_files = [
     "LICENSE",
@@ -23,6 +23,7 @@ Gem::Specification.new do |s|
      "README.rdoc",
      "Rakefile",
      "VERSION",
+     "ebcdic_converter.gemspec",
      "lib/ebcdic_converter.rb",
      "spec/ebcdic_converter_spec.rb",
      "spec/spec.opts",
@@ -32,7 +33,7 @@ Gem::Specification.new do |s|
   s.rdoc_options = ["--charset=UTF-8"]
   s.require_paths = ["lib"]
   s.rubygems_version = %q{1.3.7}
-  s.summary = %q{Adds a method to String that converts it from ebcdic to integer}
+  s.summary = %q{Adds a method (ebcdic_to_i) to String that converts it from ebcdic to integer}
   s.test_files = [
     "spec/ebcdic_converter_spec.rb",
      "spec/spec_helper.rb"
