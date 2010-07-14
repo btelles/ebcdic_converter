@@ -5,7 +5,7 @@
 
 Gem::Specification.new do |s|
   s.name = %q{ebcdic_converter}
-  s.version = "1.1.0"
+  s.version = "1.1.1"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Bernie Telles"]
@@ -25,6 +25,7 @@ Gem::Specification.new do |s|
      "VERSION",
      "ebcdic_converter.gemspec",
      "lib/ebcdic_converter.rb",
+     "rails/init.rb",
      "spec/ebcdic_converter_spec.rb",
      "spec/spec.opts",
      "spec/spec_helper.rb"
