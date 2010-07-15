@@ -34,12 +34,15 @@ module EbcdicConverter
 end
 
 class String
-  def ebcdic_to_i
+  def ebcdic_to_i(*options)
+    unless options.empty?
+      @strict = options[0][:strict]
+    end
     stripped_me = strip
     if stripped_me.size > 0
       last_digit = stripped_me[-1..-1]
       last_digit =~ /^\d$/ ?
-        stripped_me.to_i :
+        stricted(stripped_me.to_i) :
         to_ebcdic(stripped_me)
     else
       0
@@ -47,6 +50,14 @@ class String
   end
 
   private 
+
+  def stricted(integer)
+    if @strict
+      raise "Invalid EBCDIC Numberin #{self.to_s}"
+    else
+      integer
+    end
+  end
 
   def to_ebcdic(stripped_me)
     last_digit = stripped_me[-1..-1]

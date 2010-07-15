@@ -13,8 +13,13 @@ describe "EbcdicConverter" do
       "12K".ebcdic_to_i.should == -122
     end
     it "converts last digit to 0 if it's a } OR {" do
-      "00012}".ebcdic_to_i.should == 120
-      "00012{".ebcdic_to_i.should == -120
+      "00012{".ebcdic_to_i.should == 120
+      "00012}".ebcdic_to_i.should == -120
+    end
+    it "raises an error when we set :strict => true" do
+      lambda {
+        "000121".ebcdic_to_i(:strict => true)
+      }.should raise_error
     end
   end
 end
