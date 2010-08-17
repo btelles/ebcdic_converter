@@ -5,11 +5,11 @@
 
 Gem::Specification.new do |s|
   s.name = %q{ebcdic_converter}
-  s.version = "1.1.3"
+  s.version = "1.2.0"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Bernie Telles"]
-  s.date = %q{2010-07-15}
+  s.date = %q{2010-08-17}
   s.description = %q{Adds a method (ebcdic_to_i) to String that converts it from ebcdic to integer}
   s.email = %q{btelles@gmail.com}
   s.extra_rdoc_files = [
