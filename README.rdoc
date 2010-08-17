@@ -1,9 +1,28 @@
 = ebcdic_converter
 
-Description goes here.
+Adds two methods to string.
+
+  ebcdic_to_i
+
+and
+
+  to_ebcdic
+
+#ebcdic_to_i converts an ebcdic representation to a number
+For example:
+
+   '12C' => 123
+   '12L' => -123
+
+#to_ebcdic converts existing number to ebcdic.
+For example
+
+  '123'  => '12C'
+  '-123' => '12L'
+
 
 == Note on Patches/Pull Requests
- 
+
 * Fork the project.
 * Make your feature addition or bug fix.
 * Add tests for it. This is important so I don't break it in a
