@@ -22,4 +22,12 @@ describe "EbcdicConverter" do
       }.should raise_error
     end
   end
+  describe "to_ebcdic" do
+    it 'converts a positive string' do
+      '123'.to_ebcdic.should == '12C'
+    end
+    it 'converts a negative string' do
+      '-123'.to_ebcdic.should == '12L'
+    end
+  end
 end

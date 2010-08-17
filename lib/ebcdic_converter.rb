@@ -34,6 +34,13 @@ module EbcdicConverter
 end
 
 class String
+  # extends the string class to convert
+  # one ebcdic representation to a number
+  # For example:
+  #
+  # '12C' => 123
+  # '12L' => -123
+  #
   def ebcdic_to_i(*options)
     unless options.empty?
       @strict = options[0][:strict]
@@ -43,11 +50,24 @@ class String
       last_digit = stripped_me[-1..-1]
       last_digit =~ /^\d$/ ?
         stricted(stripped_me.to_i) :
-        to_ebcdic(stripped_me)
+        one_char_to_ebcdic(stripped_me)
     else
       0
     end
   end
+
+  # Converts existing number to ebcdic. 
+  # For example
+  #
+  # '123'  => '12C'
+  # '-123' => '12L'
+  def to_ebcdic
+    new_str = self.dup
+    self[0..0] == '-' ?
+      new_str[1..-2] << EbcdicConverter::EBCDICNEG.invert[new_str[-1..-1]] :
+      new_str[0..-2] << EbcdicConverter::EBCDICPOS.invert[new_str[-1..-1]]
+  end
+
 
   private 
 
@@ -59,7 +79,7 @@ class String
     end
   end
 
-  def to_ebcdic(stripped_me)
+  def one_char_to_ebcdic(stripped_me)
     last_digit = stripped_me[-1..-1]
     EbcdicConverter::EBCDICPOS.keys.include?(last_digit) ?
       unsigned_ebcdic(stripped_me) :
